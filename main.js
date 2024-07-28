@@ -1,4 +1,5 @@
 import player from "./player.js";
+
 const game = document.getElementById("game");
 const ctx = game.getContext("2d");
 
@@ -17,15 +18,18 @@ const boardInfo = {
     frame: function () {
         //clear scene
         ctx.clearRect(0, 0, boardInfo.width, boardInfo.height);
-        //update player position
-        player.update();
+
+        //update player position ! stopped cuz skill issue
+        // player.update();
+
         //draw frame
         ctx.fillStyle = boardInfo.color;
         ctx.fillRect(0, 0, boardInfo.width, boardInfo.height);
-        ctx.fillStyle = player.color;
-        ctx.fillRect(player.x, player.y, player.size, player.size);
+        player.draw();
         requestAnimationFrame(boardInfo.frame);
     },
 }
 
 init();
+
+export {ctx, game};
