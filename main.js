@@ -26,6 +26,7 @@ const boardInfo = {
         ctx.fillStyle = boardInfo.color;
         ctx.fillRect(0, 0, boardInfo.width, boardInfo.height);
         player.draw();
+        // proj.draw();
         requestAnimationFrame(boardInfo.frame);
     },
 }
